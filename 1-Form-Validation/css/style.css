@@ -73,3 +73,12 @@ body {
   margin-top: 20px;
   width: 100%;
 }
+
+.form-control > input.error {
+  border-color: var(--error-color);
+  outline-color: var(--error-color);
+}
+.form-control > input.success {
+  border-color: var(--success-color);
+  outline-color: var(--success-color);
+}
