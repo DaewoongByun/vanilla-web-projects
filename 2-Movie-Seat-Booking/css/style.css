@@ -1,0 +1,78 @@
+@import url("../../reset.css");
+
+* {
+  color: white;
+}
+body {
+  background-color: #242333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.movie-pick {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.movie-pick > select {
+  width: 193px;
+  height: 28px;
+  border-radius: 6px;
+  padding-left: 5px;
+}
+
+.seat-info {
+  display: flex;
+  width: 300px;
+  background-color: #201f2e;
+  padding: 5px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+.seat-info-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.seat-info-item > .text {
+  color: #77776b;
+}
+.icon {
+  width: 15px;
+  height: 12px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: white;
+}
+.icon.na {
+  background-color: #444451;
+}
+.icon.selected {
+  background-color: #6bcdf1;
+}
+
+.screen-wrapper {
+  padding: 3px;
+}
+.screen-wrapper {
+  filter: drop-shadow(0 3px 10px rgb(255 255 255 / 70%));
+  margin-bottom: 20px;
+}
+.screen {
+  width: 200px;
+  height: 70px;
+  background-color: white;
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+  padding: 3px;
+}
+.total-price > span {
+  color: #6bcdf1;
+}
