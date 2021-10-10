@@ -21,10 +21,14 @@ body {
   margin-bottom: 30px;
 }
 .movie-pick > select {
+  color: black;
   width: 193px;
   height: 28px;
   border-radius: 6px;
   padding-left: 5px;
+}
+option {
+  color: black;
 }
 
 .seat-info {
@@ -73,6 +77,33 @@ body {
   clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
   padding: 3px;
 }
+
+.seat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.seat > .row {
+  display: flex;
+  gap: 5px;
+}
+
+.seat > .row > .icon {
+  cursor: pointer;
+}
+
+.seat > .row > .icon:nth-child(2),
+.seat > .row > .icon:nth-child(6) {
+  margin-right: 20px;
+}
+
+.seat > .row > .icon.na:hover,
+.seat > .row > .icon.selected:hover {
+  transform: scale(1.15);
+}
+
 .total-price > span {
   color: #6bcdf1;
 }
