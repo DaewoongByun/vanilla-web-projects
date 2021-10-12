@@ -15,6 +15,7 @@ function App() {
 }
 function init() {
   $(".pause-btn").style.display = "none";
+  setTime(0);
 }
 
 function playVideo() {
@@ -39,8 +40,27 @@ function changeTime(e, clickedTime = -1) {
   percent = percent.toFixed(3);
   $(".bar").style.width = `${percent}%`;
   if (clickedTime !== -1) {
-    video.currentTime = clickedTime;
+    video.currentTime = curTime;
   }
+  setTime(curTime);
+}
+
+function setTime(curTime) {
+  function toLength2(str) {
+    if (str.length < 2) {
+      return "0" + str;
+    }
+    return str;
+  }
+  const video = $("video");
+  const duration = video.duration;
+  let durationHour = toLength2(`${parseInt(duration / 60)}`);
+  let durationMinute = toLength2(`${parseInt(duration % 60)}`);
+  let curHour = toLength2(`${parseInt(curTime / 60)}`);
+  let curMinute = toLength2(`${parseInt(curTime % 60)}`);
+
+  const timeString = `${curHour}:${curMinute} / ${durationHour}:${durationMinute}`;
+  $(".time").innerText = timeString;
 }
 
 function handleBarClick(e) {
