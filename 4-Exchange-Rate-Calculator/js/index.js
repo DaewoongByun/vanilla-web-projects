@@ -18,6 +18,10 @@ const store = {
       ".text"
     ).innerText = `1 ${this.fromCurrency} = ${this.rate} ${this.toCurrency}`;
   },
+  renderSelect: function () {
+    $(".from > select").value = this.fromCurrency;
+    $(".to > select").value = this.toCurrency;
+  },
   setFromAcount: function (amount) {
     this.fromAmount = amount;
     this.toAmount = (this.fromAmount * this.rate).toFixed(2);
@@ -48,6 +52,26 @@ const store = {
     this.renderAmount();
     this.renderRate();
   },
+  swap: async function () {
+    const temp = this.fromCurrency;
+    this.fromCurrency = this.toCurrency;
+    this.toCurrency = temp;
+    const response = await fetch(
+      `https://v6.exchangerate-api.com/v6/81a24801eabd8893c27453b3/latest/${this.fromCurrency}`
+    );
+    if (response.status !== 200) {
+      alert("데이터를 가져올수 없습니다.");
+      return;
+    }
+    const data = await response.json();
+    const rates = data.conversion_rates;
+    this.rates = rates;
+    this.rate = rates[this.toCurrency];
+    this.toAmount = (this.fromAmount * this.rate).toFixed(2);
+    this.renderSelect();
+    this.renderRate();
+    this.renderAmount();
+  },
 };
 
 function App() {
@@ -65,6 +89,9 @@ function App() {
   });
   $("#to-select").addEventListener("change", function (e) {
     store.setToCurrency(e.target.value);
+  });
+  $(".swap").addEventListener("click", function (e) {
+    store.swap();
   });
 }
 

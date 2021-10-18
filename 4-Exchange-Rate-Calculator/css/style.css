@@ -5,3 +5,29 @@ body {
   align-items: center;
   justify-content: center;
 }
+.container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+input {
+  text-align: end;
+  font-size: 28px;
+  outline: none;
+  border: none;
+}
+.from {
+  display: flex;
+}
+.mid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.to {
+  display: flex;
+}
