@@ -1,0 +1,21 @@
+@import url("../../reset.css");
+
+body {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
