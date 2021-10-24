@@ -2,7 +2,7 @@
 
 body {
   text-align: center;
-  margin-top: 20px;
+  padding: 20px 0;
 }
 
 h1 {
@@ -13,9 +13,62 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 20px;
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.buttons > button {
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.line-ver {
+  border-right: 1px solid black;
+}
+.line-hor {
+  border-bottom: 1px solid black;
+}
+
+.persons {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 20px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.people > .item {
+  display: flex;
+  justify-content: space-between;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  font-size: 18px;
+}
+
+.head > span:first-child,
+.item > span:first-child,
+.total > span:first-child {
+  font-weight: bold;
 }
