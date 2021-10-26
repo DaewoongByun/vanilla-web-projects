@@ -45,6 +45,9 @@ aside {
   left: 0;
   background-color: burlywood;
   width: 180px;
+  transform: translateX(-180px);
+  transition: transform 0.3s;
+  opacity: 0;
 }
 
 aside > .top {
@@ -84,6 +87,7 @@ aside > .menus {
   display: flex;
   justify-content: center;
   padding-top: 120px;
+  display: none;
 }
 
 .modal-container {
@@ -98,7 +102,23 @@ aside > .menus {
   padding: 10px;
   border-bottom: 1px solid black;
 }
+.icon {
+  cursor: pointer;
+}
 
 .modal-container > .content {
   padding: 10px;
+}
+
+#modal-input {
+  padding: 5px;
+}
+.modal-btn {
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  background-color: skyblue;
+  color: white;
+  border-radius: 6px;
+  font-size: 18px;
 }
