@@ -1,1 +1,57 @@
 @import url("../../reset.css");
+
+body {
+  background-color: #34495e;
+  color: white;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+.container > p {
+  margin-bottom: 100px;
+}
+.mid {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.wrong {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.wrong > span:last-child {
+  font-size: 24px;
+}
+
+.word {
+  display: flex;
+  gap: 8px;
+  font-size: 30px;
+}
+
+.space {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.underline {
+  border-top: 3px solid #2980b9;
+  width: 24px;
+}
