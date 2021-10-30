@@ -16,6 +16,8 @@ const store = {
   word: "",
   wrongs: [],
   corrects: [],
+  life: 6,
+  numberWordAlphabet: 0,
 
   reset: function () {
     // 0 ~ words.length - 1
@@ -23,8 +25,18 @@ const store = {
     this.word = this.words[index];
     this.wrongs = [];
     this.corrects = [];
+    this.life = 6;
+    this.setNumberWordAlphabet();
 
     this.render();
+  },
+
+  setNumberWordAlphabet: function () {
+    const set = new Set();
+    this.word.split("").forEach((al) => {
+      set.add(al);
+    });
+    this.numberWordAlphabet = set.size;
   },
 
   handleKeyPress: function (key) {
@@ -32,12 +44,31 @@ const store = {
       alert("이미 입력한 알파벳입니다.");
       return;
     }
+    let status = 0;
     if (this.word.includes(key)) {
       this.corrects.push(key);
+      if (this.corrects.length === this.numberWordAlphabet) {
+        status = 1;
+      }
     } else {
       this.wrongs.push(key);
+      this.life--;
+      if (this.life === 0) {
+        status = -1;
+      }
     }
     this.render();
+    if (status === 1) {
+      setTimeout(() => {
+        alert("정답!");
+        this.reset();
+      }, 100);
+    } else if (status === -1) {
+      setTimeout(() => {
+        alert("실패!");
+        this.reset();
+      }, 100);
+    }
   },
 
   render: function () {
@@ -52,8 +83,15 @@ const store = {
       spaces += space;
     }
     $(".word").innerHTML = spaces;
-
     $(".wrong-words").innerText = this.wrongs.join(", ");
+    $(".life-count").innerText = `${this.life}개`;
+    for (let i = 1; i <= 6; i++) {
+      if (i <= 6 - this.life) {
+        $(`.hang-${i}`).classList.remove("hide");
+      } else {
+        $(`.hang-${i}`).classList.add("hide");
+      }
+    }
   },
 };
 

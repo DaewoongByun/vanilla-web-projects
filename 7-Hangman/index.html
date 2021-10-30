@@ -17,10 +17,105 @@
       <h1>Hangman</h1>
       <p>알파벳을 입력해서 제한횟수 안에 단어를 맞춰보세요</p>
       <section class="mid">
-        <div class="hangman-container"></div>
-        <div class="wrong">
-          <span>Wrong</span>
-          <span class="wrong-words">a,b,c,d</span>
+        <div class="hangman-container">
+          <svg width="200" height="250">
+            <line
+              x1="0"
+              y1="250"
+              x2="100"
+              y2="250"
+              stroke="white"
+              stroke-width="8"
+            />
+            <line
+              x1="50"
+              y1="250"
+              x2="50"
+              y2="50"
+              stroke="white"
+              stroke-width="5"
+            />
+            <line
+              x1="48"
+              y1="50"
+              x2="130"
+              y2="50"
+              stroke="white"
+              stroke-width="3"
+            />
+            <line
+              x1="130"
+              y1="50"
+              x2="130"
+              y2="80"
+              stroke="white"
+              stroke-width="3"
+            />
+            <circle
+              cx="130"
+              cy="100"
+              r="20"
+              stroke="white"
+              stroke-width="3"
+              fill="none"
+              class="hang-1 hide"
+            />
+            <line
+              x1="130"
+              y1="120"
+              x2="130"
+              y2="170"
+              stroke="white"
+              stroke-width="3"
+              class="hang-2 hide"
+            />
+            <line
+              x1="130"
+              y1="140"
+              x2="100"
+              y2="130"
+              stroke="white"
+              stroke-width="3"
+              class="hang-3 hide"
+            />
+            <line
+              x1="130"
+              y1="140"
+              x2="160"
+              y2="130"
+              stroke="white"
+              stroke-width="3"
+              class="hang-4 hide"
+            />
+            <line
+              x1="130"
+              y1="170"
+              x2="100"
+              y2="220"
+              stroke="white"
+              stroke-width="3"
+              class="hang-5 hide"
+            />
+            <line
+              x1="130"
+              y1="170"
+              x2="160"
+              y2="220"
+              stroke="white"
+              stroke-width="3"
+              class="hang-6 hide"
+            />
+          </svg>
+        </div>
+        <div class="mid-right">
+          <div class="wrong">
+            <span>Wrong</span>
+            <span class="wrong-words"></span>
+          </div>
+          <div class="life">
+            <span>목숨</span>
+            <span class="life-count">10개</span>
+          </div>
         </div>
       </section>
       <section class="word">

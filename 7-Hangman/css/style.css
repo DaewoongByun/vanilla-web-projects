@@ -27,15 +27,24 @@ h1 {
   margin-bottom: 40px;
 }
 
-.wrong {
+.mid-right {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  gap: 20px;
+}
+.wrong,
+.life {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
 }
 
-.wrong > span:last-child {
+.wrong > span:last-child,
+.life > span:last-child {
   font-size: 24px;
+  height: 24px;
 }
 
 .word {
