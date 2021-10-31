@@ -56,16 +56,6 @@ function App() {
     const keyword = $(".search > input").value;
     store.search(keyword);
   });
-  $(".search-result").addEventListener("mouseover", (e) => {
-    if (e.target.className === "card-hover") {
-      e.target.style.opacity = 1;
-    }
-  });
-  $(".search-result").addEventListener("mouseout", (e) => {
-    if (e.target.className === "card-hover") {
-      e.target.style.opacity = 0;
-    }
-  });
 }
 
 App();

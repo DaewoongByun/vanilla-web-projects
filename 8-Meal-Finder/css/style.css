@@ -62,6 +62,9 @@
   transition: all ease-in 0.2s;
   padding: 0 10px;
 }
+.card > .card-hover:hover {
+  opacity: 1;
+}
 
 .card > img {
   width: 170px;
