@@ -34,6 +34,13 @@ const store = {
         this.render();
       });
   },
+  selectFood: function (mealId) {
+    this.selectedFood = this.foods.find((food) => food.idMeal === mealId);
+    this.render();
+    $(".selected-food").scrollIntoView({
+      behavior: "smooth",
+    });
+  },
   randomSearch: function () {
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => {
@@ -99,6 +106,10 @@ function App() {
   });
   $(".icon-random").addEventListener("click", () => {
     store.randomSearch();
+  });
+  $(".search-result").addEventListener("click", (e) => {
+    if (e.target.className === "card-hover")
+      store.selectFood(e.target.dataset.mealId);
   });
 }
 

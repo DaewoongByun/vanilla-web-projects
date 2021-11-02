@@ -36,6 +36,30 @@
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
+@media screen and (max-width: 850px) {
+  .search-result {
+    display: grid;
+    grid-template-columns: 180px 180px 180px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .search-result {
+    display: grid;
+    grid-template-columns: 180px 180px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .search-result {
+    display: grid;
+    grid-template-columns: 180px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
 
 .search-result > .card {
   background-color: white;
@@ -73,8 +97,6 @@
 }
 
 .selected-food {
-  position: relative;
-  top: -40px;
   text-align: center;
   display: flex;
   flex-direction: column;
