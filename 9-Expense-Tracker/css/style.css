@@ -1,0 +1,157 @@
+@import url("../../reset.css");
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(250, 250, 250);
+}
+
+.container {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 40px 0;
+  height: auto;
+  position: absolute;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 60px;
+}
+
+.total-money-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.total-money-container > span:first-child {
+  font-size: 18px;
+  font-weight: bold;
+}
+.total-money-container > span:last-child {
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+.income-expense {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin-bottom: 40px;
+}
+
+.income-expense span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.left,
+.right {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.left {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.left > div,
+.right > div {
+  font-size: 18px;
+}
+.left > div {
+  color: lightgreen;
+}
+.right > div {
+  color: lightcoral;
+}
+
+.section-title {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+.section-title:after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 15px auto;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px 10px 10px;
+  height: 40px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  position: relative;
+}
+
+.history-item:after {
+  content: "";
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+.history-item-income:after {
+  background-color: lightgreen;
+}
+.history-item-expense:after {
+  background-color: lightcoral;
+}
+
+.transaction {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-item > input {
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  background-color: #9c88ff;
+  color: white;
+  outline: none;
+  border: none;
+  height: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
+}
